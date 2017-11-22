@@ -9,5 +9,10 @@ k run nginx-prod --image=nginx --replicas=2 --port=80 \
 kgpo
 kgpo -l "project=pilot,environment=production"
 
+# Secrets
+k create secret generic db-user-pass --from-file=./username.txt \
+    --from-file=./password.txt
+kg secrets
+kd secrets/db-user-pass
 
 
