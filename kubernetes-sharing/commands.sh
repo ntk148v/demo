@@ -49,3 +49,7 @@ kdpo ubuntu-demo
 k create ing -f single-svc-ingress.yaml
 kg ing
 
+# DaemonSets
+k create -f daemonset-demo.yaml
+kg daemonset
+kd daemonset
