@@ -13,8 +13,8 @@ spec:
     imagePullPolicy: IfNotPresent
     name: ubuntu-demo
     volumeMounts:
-    - mountPath: /data-mounts
-      name: data
+      - mountPath: /data-mounts
+        name: data
   volumes:
-  - name: data
-    emptyDir: {}
+    - name: data
+      emptyDir: {}
