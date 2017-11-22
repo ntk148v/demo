@@ -15,4 +15,15 @@ k create secret generic db-user-pass --from-file=./username.txt \
 kg secrets
 kd secrets/db-user-pass
 
+# Deployments & ReplicaSet
+k create -f nginx-deplopyment.yaml
+kgpo
+kgdep
+
+# Jobs
+k create -f countdown-job.yaml
+kd jobs countdown-demo
+pods=$(kg pods --show-all --selector=job-name=countdown-demo --output=jsonpath={.items..metadata.name})
+echo $pods
+kl $pods
 
