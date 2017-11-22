@@ -39,6 +39,10 @@ k expose deployment nginx-deployment-demo --name="service-deployment-demo" \
 kgsvc service-deployment-demo
 kdsvc service-deployment-demo
 
+# Volumes
+k create -f emptydir-volume.yaml
+kgpo
+
 # Ingress
 k create ing -f single-svc-ingress.yaml
 kg ing
