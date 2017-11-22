@@ -16,7 +16,7 @@ kg secrets
 kd secrets/db-user-pass
 
 # Deployments & ReplicaSet
-k create -f nginx-deplopyment.yaml
+k create -f nginx-deployment.yaml
 kgpo
 kgdep
 
@@ -27,3 +27,14 @@ pods=$(kg pods --show-all --selector=job-name=countdown-demo --output=jsonpath={
 echo $pods
 kl $pods
 
+# Services
+k run nginx-pod-demo --image=nginx --port=80 --restart="Never" \
+--labels="app=nginx"
+k expose pod nginx-pod-demo --port=8001 --target-port=80 \
+    --name="service-pod-demo"
+kgsvc service-pod-demo
+
+k expose deployment nginx-deployment-demo --name="service-deployment-demo" \
+    --external-ip="<IP>"
+kgsvc service-deployment-demo
+kdsvc service-deployment-demo

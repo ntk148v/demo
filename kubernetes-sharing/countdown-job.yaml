@@ -8,7 +8,7 @@ spec:
       name: countdown-demo
     spec:
       containers:
-      - name: counter-01
+      - name: counter-demo
         image: centos:latest
         command:
           - "bin/bash"
