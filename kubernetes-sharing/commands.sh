@@ -38,3 +38,8 @@ k expose deployment nginx-deployment-demo --name="service-deployment-demo" \
     --external-ip="<IP>"
 kgsvc service-deployment-demo
 kdsvc service-deployment-demo
+
+# Ingress
+k create ing -f single-svc-ingress.yaml
+kg ing
+
