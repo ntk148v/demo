@@ -42,6 +42,8 @@ kdsvc service-deployment-demo
 # Volumes
 k create -f emptydir-volume.yaml
 kgpo
+# docker inspect <container_id>
+kdpo ubuntu-demo
 
 # Ingress
 k create ing -f single-svc-ingress.yaml
